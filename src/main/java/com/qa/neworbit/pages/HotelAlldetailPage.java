@@ -40,7 +40,10 @@ public class HotelAlldetailPage {
 	private String status = "//div[@class='text-text-secondary']";
 	private String bid = "//span[@class='cursor-pointer bid msgbid']";
 	
-	
+	private String cancel = "//div[@class='heading-sublinks']//span[text()='Cancel']";
+	private String cancelreason ="//span[@class=\"ant-select-selection-wrap\"]//span//input[@id='rc_select_1']";
+	private String reason = "//div[@title=\"Forced to cancel or postpone trip\"]";
+	private String reasonSubmit ="//button[@type=\"submit\"]//span[text()='Submit Request']";
 	
 	// constructor
 	
@@ -113,15 +116,13 @@ public class HotelAlldetailPage {
 		//generating random names
 		
 		Faker faker = new Faker();
-
         String firstName = faker.name().firstName();
         String lastName = faker.name().lastName();
         page.waitForTimeout(10000);
         
         System.out.println("First Name: " + firstName);
         System.out.println("Last Name: " + lastName);
-
-		
+	
 		page.fill(firstname, firstName);
 		page.fill(lastname, lastName);
 		page.fill(panno, "AAACD3494N");
@@ -147,5 +148,31 @@ public class HotelAlldetailPage {
 		return bookingstatus;
 		
 	}
+	
+	public String bookingCancel() {
+		
+		
+		
+		Page page1 = page.waitForPopup(() -> {
+			System.out.println("inside the clause for cancel booking");
+			page.click(bid);
+			System.out.println("booking id clicked");
+			page.waitForTimeout(20000);
+		
+		});
+		
+		page1.click(cancel);
+		System.out.println("cancel is clicked");
+		page1.waitForTimeout(2000);
+		page1.click(cancelreason);
+		page1.waitForTimeout(2000);
+		page1.click(reason);
+		page1.click(reasonSubmit);
+		page1.waitForTimeout(20000);
+		
+
+		return null;
+	}
+	
 		
 }

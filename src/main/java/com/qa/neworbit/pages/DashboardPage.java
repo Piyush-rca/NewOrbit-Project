@@ -1,5 +1,9 @@
 package com.qa.neworbit.pages;
 
+import java.time.LocalDate;
+import java.time.format.TextStyle;
+import java.util.Locale;
+
 import com.microsoft.playwright.Page;
 
 public class DashboardPage {
@@ -9,6 +13,11 @@ public class DashboardPage {
 	
 	//1. String locators available on dashboard page.
 	private String datetoclick;
+	
+	private String targetDay;
+	private String targetMonth;
+	private String targetYear;
+	
 	private String destination = "(//input[@class='ant-select-selection-search-input'])[1]";
 	
 	private String destmatch = "//div[@class='ant-select-item ant-select-item-option']";
@@ -43,7 +52,42 @@ public class DashboardPage {
 		return actualtitle;
 	}
 	
-	public boolean search(String City, String day, String month, String Year, String Nationality) {
+	public boolean search(String City, String Nationality) {
+		
+		
+		
+		LocalDate dateToSearch = LocalDate.now().plusDays(60);
+		System.out.println("date to make boooking for : " + dateToSearch);
+		
+		targetDay = String.valueOf(dateToSearch.getDayOfMonth());
+		targetMonth = dateToSearch.getMonth().getDisplayName(TextStyle.SHORT, Locale.ENGLISH);
+		targetYear = String.valueOf(dateToSearch.getYear());
+		System.out.println("targetDay " + targetDay);
+		System.out.println("targetMonth " + targetMonth);
+		System.out.println("targetYear " + targetYear);
+		
+		date = "//td[@class='ant-picker-cell ant-picker-cell-in-view']/div[text()='" + targetDay + "']";
+		
+		page.fill(destination, City);
+		page.locator(destmatch).first().click();
+		System.out.println("Date want to search :" + date);
+		page.click(checkin);
+		String cMonth = page.textContent(chkinmonth);
+		String cYear = page.textContent(chkinyear);
+		System.out.println("Current month and year :" + cMonth +" "+ cYear);
+		while(!(cMonth.equals(targetMonth) && cYear.equals(targetYear))){
+			page.click(next);
+			cMonth = page.textContent(chkinmonth);
+			cYear = page.textContent(chkinyear);
+		}
+		System.out.println("Updated Current month and year :" + cMonth +" "+ cYear);
+		page.click(date);
+
+
+
+		
+		
+	/*	{
 		datetoclick = day;
 		date = "//td[@class='ant-picker-cell ant-picker-cell-in-view']/div[text()='" + datetoclick + "']";
 		System.out.println("Day want to search :" + datetoclick);
@@ -62,6 +106,10 @@ public class DashboardPage {
 		//System.out.println(date);
 
 		page.click(date);
+		)
+		
+		*/
+		
 		page.fill(paxnationality, Nationality);
 		//page.getByText("India", new Page.GetByTextOptions().setExact(true)).click();
 		page.getByText(Nationality, new Page.GetByTextOptions().setExact(true)).click();
@@ -81,9 +129,38 @@ public class DashboardPage {
 
 	}
 	
-	public SearchResultPage navigatetosearchresult(String City, String day, String month, String Year, String Nationality) {
+	public SearchResultPage navigatetosearchresult(String City,String Nationality) {
 		
 		System.out.println("on dashboard page");
+		
+		LocalDate dateToSearch = LocalDate.now().plusDays(60);
+		System.out.println("date to make boooking for : " + dateToSearch);
+		
+		targetDay = String.valueOf(dateToSearch.getDayOfMonth());
+		targetMonth = dateToSearch.getMonth().getDisplayName(TextStyle.SHORT, Locale.ENGLISH);
+		targetYear = String.valueOf(dateToSearch.getYear());
+		System.out.println("targetDay " + targetDay);
+		System.out.println("targetMonth " + targetMonth);
+		System.out.println("targetYear " + targetYear);
+		
+		date = "//td[@class='ant-picker-cell ant-picker-cell-in-view']/div[text()='" + targetDay + "']";
+		
+		page.fill(destination, City);
+		page.locator(destmatch).first().click();
+		System.out.println("Date want to search :" + date);
+		page.click(checkin);
+		String cMonth = page.textContent(chkinmonth);
+		String cYear = page.textContent(chkinyear);
+		System.out.println("Current month and year :" + cMonth +" "+ cYear);
+		while(!(cMonth.equals(targetMonth) && cYear.equals(targetYear))){
+			page.click(next);
+			cMonth = page.textContent(chkinmonth);
+			cYear = page.textContent(chkinyear);
+		}
+		System.out.println("Updated Current month and year :" + cMonth +" "+ cYear);
+		page.click(date);
+		
+		/*
 		datetoclick = day;
 		date = "//td[@class='ant-picker-cell ant-picker-cell-in-view']/div[text()='" + datetoclick + "']";
 		System.out.println("Day want to search :" + datetoclick);
@@ -107,6 +184,9 @@ public class DashboardPage {
 		System.out.println("Updated Current month and year :" + cMonth +" "+ cYear);
 		System.out.println(date);
 		page.click(date);
+		
+		*/
+		
 //		page.fill(paxnationality, Nationality);
 		//page.getByText("India", new Page.GetByTextOptions().setExact(true)).click();
 		

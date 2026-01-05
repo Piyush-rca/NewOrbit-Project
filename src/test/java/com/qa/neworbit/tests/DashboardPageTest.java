@@ -24,7 +24,7 @@ public class DashboardPageTest extends Basetest{
 	
 	@Test(priority = 3)
 	public void Dosearch() {
-	Assert.assertTrue(dashboardpage.search(prop.getProperty("city"), prop.getProperty("day"), prop.getProperty("month") ,prop.getProperty("year"), prop.getProperty("nationality")));
+	Assert.assertTrue(dashboardpage.search(prop.getProperty("city"), prop.getProperty("nationality")));
 	}
 
 }

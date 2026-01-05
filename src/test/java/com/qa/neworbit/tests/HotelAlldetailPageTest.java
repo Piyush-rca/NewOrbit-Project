@@ -47,7 +47,13 @@ public class HotelAlldetailPageTest extends Basetest{
 
 	}
 
-	
+	@Test(priority=6)
+	public void hotelbookingcancel() {
+		
+		String bidclick = hotelalldetailpage.bookingCancel();
+		
+		
+	}
 	
 	
 }
