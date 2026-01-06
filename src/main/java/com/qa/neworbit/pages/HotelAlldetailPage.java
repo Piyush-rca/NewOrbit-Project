@@ -44,6 +44,8 @@ public class HotelAlldetailPage {
 	private String cancelreason ="//span[@class=\"ant-select-selection-wrap\"]//span//input[@id='rc_select_1']";
 	private String reason = "//div[@title=\"Forced to cancel or postpone trip\"]";
 	private String reasonSubmit ="//button[@type=\"submit\"]//span[text()='Submit Request']";
+	private String cancelConfirmSubmit = "//button//span[text()='Confirm']";
+	private String cancelAlert = "//div//span[contains(text(),'Your booking with ID')]";
 	
 	// constructor
 	
@@ -163,15 +165,21 @@ public class HotelAlldetailPage {
 		
 		page1.click(cancel);
 		System.out.println("cancel is clicked");
-		page1.waitForTimeout(2000);
+		//page1.waitForTimeout(2000);
 		page1.click(cancelreason);
-		page1.waitForTimeout(2000);
+		//System.out.println("cancel reason is clicked");
+		//page1.waitForTimeout(2000);
 		page1.click(reason);
+		//System.out.println("cancel reason is selected");
 		page1.click(reasonSubmit);
-		page1.waitForTimeout(20000);
+		//System.out.println("reason submit clicked");
+		//page1.waitForTimeout(2000);
+		page1.click(cancelConfirmSubmit);
+		//System.out.println("cancel submit clicked");
+		String cancelStatus = page1.innerText(cancelAlert);
+		System.out.println("Cancellation status :" + cancelStatus);
 		
-
-		return null;
+		return cancelStatus;
 	}
 	
 		

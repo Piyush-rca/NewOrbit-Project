@@ -13,7 +13,7 @@ public class HotelAlldetailPageTest extends Basetest{
 	@Test(priority=1)
 	public void navigate() throws InterruptedException, UnknownHostException {
 		dashboardpage = loginpage.navigatetodashboard(prop.getProperty("email"), prop.getProperty("password"));
-		searchresultpage = dashboardpage.navigatetosearchresult(prop.getProperty("city"), prop.getProperty("day"), prop.getProperty("month") ,prop.getProperty("year"), prop.getProperty("nationality"));
+		searchresultpage = dashboardpage.navigatetosearchresult(prop.getProperty("city"), prop.getProperty("nationality"));
 		hotelalldetailpage = searchresultpage.navigatetohotelalldetail();
 	}
 	
@@ -51,7 +51,8 @@ public class HotelAlldetailPageTest extends Basetest{
 	public void hotelbookingcancel() {
 		
 		String bidclick = hotelalldetailpage.bookingCancel();
-		
+		System.out.println("Cancel status recieved:- " + bidclick);
+		Assert.assertTrue(bidclick.contains("successfully cancelled"));
 		
 	}
 	
