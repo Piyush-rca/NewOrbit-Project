@@ -18,7 +18,8 @@ public class DashboardPage {
 	private String targetMonth;
 	private String targetYear;
 	
-	private String destination = "(//input[@class='ant-select-selection-search-input'])[1]";
+	//private String destination = "(//input[@class='ant-select-selection-search-input'])[1]";
+	private String destination = "(//div[contains(@class,'ant-select-selector')])[1]";
 	
 	private String destmatch = "//div[@class='ant-select-item ant-select-item-option']";
 	private String checkin = "//input[@id='checkin']";
@@ -52,11 +53,11 @@ public class DashboardPage {
 		return actualtitle;
 	}
 	
-	public boolean search(String City, String Nationality) {
+	public boolean search(String City, String Nationality, String days) {
 		
 		
-		
-		LocalDate dateToSearch = LocalDate.now().plusDays(60);
+		int afterDayToSearch = Integer.parseInt(days);
+		LocalDate dateToSearch = LocalDate.now().plusDays(afterDayToSearch);
 		System.out.println("date to make boooking for : " + dateToSearch);
 		
 		targetDay = String.valueOf(dateToSearch.getDayOfMonth());
@@ -68,7 +69,11 @@ public class DashboardPage {
 		
 		date = "//td[@class='ant-picker-cell ant-picker-cell-in-view']/div[text()='" + targetDay + "']";
 		
-		page.fill(destination, City);
+		
+		page.click(destination, new Page.ClickOptions().setForce(true));
+		//page.click(destination);
+		page.keyboard().type(City);
+		//page.fill(destination, City);
 		page.locator(destmatch).first().click();
 		System.out.println("Date want to search :" + date);
 		page.click(checkin);
@@ -129,11 +134,12 @@ public class DashboardPage {
 
 	}
 	
-	public SearchResultPage navigatetosearchresult(String City,String Nationality) {
+	public SearchResultPage navigatetosearchresult(String City,String Nationality,  String days) {
 		
 		System.out.println("on dashboard page");
 		
-		LocalDate dateToSearch = LocalDate.now().plusDays(60);
+		int afterDayToSearch = Integer.parseInt(days);
+		LocalDate dateToSearch = LocalDate.now().plusDays(afterDayToSearch);
 		System.out.println("date to make boooking for : " + dateToSearch);
 		
 		targetDay = String.valueOf(dateToSearch.getDayOfMonth());
@@ -145,7 +151,11 @@ public class DashboardPage {
 		
 		date = "//td[@class='ant-picker-cell ant-picker-cell-in-view']/div[text()='" + targetDay + "']";
 		
-		page.fill(destination, City);
+		
+		page.click(destination, new Page.ClickOptions().setForce(true));
+		//page.click(destination);
+		page.keyboard().type(City);
+		//page.fill(destination, City);
 		page.locator(destmatch).first().click();
 		System.out.println("Date want to search :" + date);
 		page.click(checkin);

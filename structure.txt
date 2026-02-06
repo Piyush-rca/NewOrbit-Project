@@ -1,0 +1,163 @@
+Folder PATH listing for volume OS
+Volume serial number is 6E11-DBA9
+C:.
+¦   .classpath
+¦   .gitignore
+¦   .project
+¦   pom.xml
+¦   structure.txt
+¦   
++---.settings
+¦       org.eclipse.core.resources.prefs
+¦       org.eclipse.jdt.core.prefs
+¦       org.eclipse.m2e.core.prefs
+¦       
++---build
+¦       NewOrbitTestExecutionReport2.html
+¦       
++---screenshot
+¦       1765508224735.png
+¦       1765508229951.png
+¦       1765508303254.png
+¦       1765508330014.png
+¦       1765508371982.png
+¦       
++---src
+¦   +---main
+¦   ¦   +---java
+¦   ¦       +---com
+¦   ¦           +---qa
+¦   ¦               +---neworbit
+¦   ¦                   +---constants
+¦   ¦                   ¦       AppConstans.java
+¦   ¦                   ¦       
+¦   ¦                   +---factory
+¦   ¦                   ¦       PlaywrightFactory.java
+¦   ¦                   ¦       
+¦   ¦                   +---listeners
+¦   ¦                   ¦       ExtentReportListener.java
+¦   ¦                   ¦       
+¦   ¦                   +---pages
+¦   ¦                           DashboardPage.java
+¦   ¦                           HotelAlldetailPage.java
+¦   ¦                           loginPage.java
+¦   ¦                           SearchResultPage.java
+¦   ¦                           
+¦   +---test
+¦       +---java
+¦       ¦   +---com
+¦       ¦       +---qa
+¦       ¦           +---neworbit
+¦       ¦               +---base
+¦       ¦               ¦       Basetest.java
+¦       ¦               ¦       
+¦       ¦               +---tests
+¦       ¦                       DashboardPageTest.java
+¦       ¦                       HotelAlldetailPageTest.java
+¦       ¦                       LoginPageTest.java
+¦       ¦                       SearchResultPageTest.java
+¦       ¦                       
+¦       +---resource
+¦           +---config
+¦           ¦       config.properties
+¦           ¦       
+¦           +---testrunner
+¦                   testing.xml
+¦                   
++---target
+¦   +---classes
+¦   ¦   +---com
+¦   ¦   ¦   +---qa
+¦   ¦   ¦       +---neworbit
+¦   ¦   ¦           +---constants
+¦   ¦   ¦           ¦       AppConstans.class
+¦   ¦   ¦           ¦       
+¦   ¦   ¦           +---factory
+¦   ¦   ¦           ¦       PlaywrightFactory.class
+¦   ¦   ¦           ¦       
+¦   ¦   ¦           +---listeners
+¦   ¦   ¦           ¦       ExtentReportListener.class
+¦   ¦   ¦           ¦       
+¦   ¦   ¦           +---pages
+¦   ¦   ¦                   DashboardPage.class
+¦   ¦   ¦                   HotelAlldetailPage.class
+¦   ¦   ¦                   loginPage.class
+¦   ¦   ¦                   SearchResultPage.class
+¦   ¦   ¦                   
+¦   ¦   +---config
+¦   ¦   ¦       config.properties
+¦   ¦   ¦       
+¦   ¦   +---META-INF
+¦   ¦   ¦   ¦   MANIFEST.MF
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +---maven
+¦   ¦   ¦       +---playwrightPOM
+¦   ¦   ¦           +---playwrightPOM
+¦   ¦   ¦                   pom.properties
+¦   ¦   ¦                   pom.xml
+¦   ¦   ¦                   
+¦   ¦   +---testrunner
+¦   ¦           testing.xml
+¦   ¦           
+¦   +---generated-sources
+¦   ¦   +---annotations
+¦   +---maven-status
+¦   ¦   +---maven-compiler-plugin
+¦   ¦       +---compile
+¦   ¦           +---default-compile
+¦   ¦                   inputFiles.lst
+¦   ¦                   
+¦   +---test-classes
+¦       +---com
+¦           +---qa
+¦               +---neworbit
+¦                   +---base
+¦                   ¦       Basetest.class
+¦                   ¦       
+¦                   +---tests
+¦                           DashboardPageTest.class
+¦                           HotelAlldetailPageTest.class
+¦                           LoginPageTest.class
+¦                           SearchResultPageTest.class
+¦                           
++---test-output
+    ¦   bullet_point.png
+    ¦   collapseall.gif
+    ¦   emailable-report.html
+    ¦   failed.png
+    ¦   index.html
+    ¦   jquery-3.6.0.min.js
+    ¦   navigator-bullet.png
+    ¦   passed.png
+    ¦   skipped.png
+    ¦   testng-failed.xml
+    ¦   testng-reports.css
+    ¦   testng-reports.js
+    ¦   testng-reports1.css
+    ¦   testng-reports2.js
+    ¦   testng-results.xml
+    ¦   
+    +---Default suite
+    ¦       Default test.html
+    ¦       Default test.xml
+    ¦       testng-failed.xml
+    ¦       
+    +---junitreports
+    ¦       TEST-com.qa.neworbit.tests.DashboardPageTest.xml
+    ¦       TEST-com.qa.neworbit.tests.HotelAlldetailPageTest.xml
+    ¦       TEST-com.qa.neworbit.tests.LoginPageTest.xml
+    ¦       TEST-com.qa.neworbit.tests.SearchResultPageTest.xml
+    ¦       
+    +---MyNewOrbitTestSuit
+            new orbit dashboard Test.html
+            new orbit dashboard Test.xml
+            new orbit hotel booking Test.html
+            new orbit hotel booking Test.xml
+            New orbit login Test.html
+            New orbit login Test.xml
+            new orbit search Results Test.html
+            new orbit search Results Test.xml
+            Test.html
+            Test.xml
+            testng-failed.xml
+            

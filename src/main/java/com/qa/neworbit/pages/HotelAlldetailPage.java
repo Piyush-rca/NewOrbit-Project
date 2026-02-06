@@ -11,7 +11,7 @@ public class HotelAlldetailPage {
 	private String noofroom = "//div[contains(@class, 'information')]//span//span";
 	
 //	private String policytype = ""; 
-	private String policyfilter ="//span[@title='Refund Policy : All']";
+	private String policyfilter ="(//span[@title='All'])[3]";
 	private String policyfilteroption = "//div[@title='Refundable']//div";
 	
 	private String recordstatus = "//div[@class='f-w-700 f-20 text-grey m-y-4']";
@@ -83,7 +83,7 @@ public class HotelAlldetailPage {
 		System.out.println("policy filter clicked");
 		page.click(policyfilteroption);
 		System.out.println("refundable cliked");
-		page.waitForTimeout(20000);
+		page.waitForTimeout(5000);
 		
 		/// logic to validate options available or not
 		if (page.isVisible(recordstatus)){
@@ -167,12 +167,12 @@ public class HotelAlldetailPage {
 		System.out.println("cancel is clicked");
 		//page1.waitForTimeout(2000);
 		page1.click(cancelreason);
-		//System.out.println("cancel reason is clicked");
+		System.out.println("cancel reason is clicked");
 		//page1.waitForTimeout(2000);
 		page1.click(reason);
-		//System.out.println("cancel reason is selected");
+		System.out.println("cancel reason is selected");
 		page1.click(reasonSubmit);
-		//System.out.println("reason submit clicked");
+		System.out.println("reason submit clicked");
 		//page1.waitForTimeout(2000);
 		page1.click(cancelConfirmSubmit);
 		//System.out.println("cancel submit clicked");

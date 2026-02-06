@@ -19,7 +19,7 @@ public class SearchResultPage {
 	//private String noofroom ="//div[@class='information ant-flex css-1v613y0']//span[@class='ant-typography css-1v613y0']//span";
 	private String noofroom = "//div[contains(@class, 'information')]//span//span";
 	
-	private String filter ="(//span[@class=\"ant-select-selection-search\"])[6]";
+	private String filter ="(//span[@class=\"ant-select-selection-search\"])[8]";
 	private String fselect = "//div[contains(@class,'ant-select-item-option-content') and contains(.,'Price (Low to High)')]";
 	
 	
@@ -73,14 +73,14 @@ public class SearchResultPage {
 				System.out.println("inside the clause");
 				page.click(fhotel);
 				System.out.println("click on first hotel");
-				page.waitForTimeout(20000);
+				page.waitForTimeout(5000);
 			});
-			page1.waitForTimeout(20000);
+			page1.waitForTimeout(5000);
 			System.out.println("waiting for noofrooms available");
 			page1.click(noofroom);
 			String availroom = page1.innerText(noofroom);
 			System.out.println("No of rooms available : " + availroom);
-			page1.waitForTimeout(20000);
+			page1.waitForTimeout(5000);
 			return true;
 		}
 		else {
@@ -90,7 +90,7 @@ public class SearchResultPage {
 	
 	public HotelAlldetailPage navigatetohotelalldetail() {
 		System.out.println("entered into navigate to hotelalldetail");
-		page.waitForTimeout(20000);
+		page.waitForTimeout(10000);
 		page.click(summary);
 		String noofhotels = page.locator(summary).first().textContent();
 		System.out.println("we found " + noofhotels + "hotels in search");

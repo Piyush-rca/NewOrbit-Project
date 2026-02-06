@@ -13,7 +13,7 @@ public class HotelAlldetailPageTest extends Basetest{
 	@Test(priority=1)
 	public void navigate() throws InterruptedException, UnknownHostException {
 		dashboardpage = loginpage.navigatetodashboard(prop.getProperty("email"), prop.getProperty("password"));
-		searchresultpage = dashboardpage.navigatetosearchresult(prop.getProperty("city"), prop.getProperty("nationality"));
+		searchresultpage = dashboardpage.navigatetosearchresult(prop.getProperty("city"), prop.getProperty("nationality"), prop.getProperty("days"));
 		hotelalldetailpage = searchresultpage.navigatetohotelalldetail();
 	}
 	

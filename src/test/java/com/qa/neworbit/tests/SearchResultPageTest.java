@@ -13,7 +13,7 @@ public class SearchResultPageTest extends Basetest{
 	@Test(priority=1)
 	public void navigate() throws InterruptedException, UnknownHostException {
 		dashboardpage = loginpage.navigatetodashboard(prop.getProperty("email"), prop.getProperty("password"));
-		searchresultpage = dashboardpage.navigatetosearchresult(prop.getProperty("city"), prop.getProperty("day"), prop.getProperty("month") ,prop.getProperty("year"), prop.getProperty("nationality"));
+		searchresultpage = dashboardpage.navigatetosearchresult(prop.getProperty("city"), prop.getProperty("nationality"), prop.getProperty("days"));
 	}
 	@Test(priority=2)
 	public void titleverify() {

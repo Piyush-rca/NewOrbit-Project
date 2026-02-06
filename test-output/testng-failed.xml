@@ -6,8 +6,8 @@
       <class name="com.qa.neworbit.tests.HotelAlldetailPageTest">
         <methods>
           <include name="tearDown"/>
-          <include name="hotelbookingcancel"/>
           <include name="setup"/>
+          <include name="hotelbookingcancel"/>
         </methods>
       </class> <!-- com.qa.neworbit.tests.HotelAlldetailPageTest -->
     </classes>
