@@ -49,6 +49,15 @@ public class loginPage {
 	}
 
 	public boolean dologin(String UserName, String Password) throws IOException, MailosaurException, InterruptedException{
+		
+		InetAddress inetAddress = InetAddress.getLocalHost();
+        System.out.println("======================================");
+        System.out.println("Test Execution Environment Details:");
+        System.out.println("Hostname: " + inetAddress.getHostName());
+        System.out.println("IP Address: " + inetAddress.getHostAddress());
+        System.out.println("======================================");
+		
+		
 		System.out.println("Login Credential: " + UserName + " : " + Password);
 		//page.click(login);
 		page.fill(email, UserName);
@@ -56,6 +65,9 @@ public class loginPage {
 		page.click(login);
 		System.out.println("login button clicked");
 		
+		
+		if (page.isVisible(otpContainer)) {
+			System.out.println("Asking for otp to login..");
 		System.out.println("step1");
 		//OTP functionality automate
 		
@@ -117,6 +129,10 @@ public class loginPage {
 		    }
 		    
 		//////////////////////////////////////////
+		}
+		    else {
+				System.out.println("Logged in without OTP");
+			}
 		    
 		page.click(search);
 		if (page.isVisible(search)) {

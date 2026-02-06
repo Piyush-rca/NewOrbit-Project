@@ -2,7 +2,9 @@ package com.qa.neworbit.base;
 
 import java.util.Properties;
 
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 
 import com.microsoft.playwright.Page;
@@ -23,9 +25,9 @@ public class Basetest {
 	protected SearchResultPage searchresultpage;
 	protected HotelAlldetailPage hotelalldetailpage;
 	
-	@BeforeTest
+	@BeforeClass
 	public void setup() {
-		//System.out.println("testbase clss enter");
+		System.out.println("testbase clss enter");
 		pf = new PlaywrightFactory();
 		prop = pf.init_prop();
 		page =pf.initBrowser(prop);
@@ -33,7 +35,7 @@ public class Basetest {
 		loginpage = new loginPage(page);
 	}
 
-	@AfterTest
+	@AfterClass
 	public void tearDown() {
 		page.context().browser().close();
 	}

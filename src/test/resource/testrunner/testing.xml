@@ -7,9 +7,28 @@
 			class-name="com.qa.neworbit.listeners.ExtentReportListener" />
 
 	</listeners>
+	
+	
+	<test name="new orbit login">   
+        <classes>  
+			<class name="com.qa.neworbit.tests.LoginPageTest"/>
+        </classes>        
+    </test>
+    
+    <test name="new orbit hotel Search">   
+        <classes>  
+			<class name="com.qa.neworbit.tests.DashboardPageTest"/>
+        </classes>        
+    </test>
+    
+    <test name="new orbit hotel Search result">   
+        <classes>  
+			<class name="com.qa.neworbit.tests.SearchResultPageTest"/>
+        </classes>        
+    </test>
 
 	
-	<test name="new orbit hotel booking Test">      
+	<test name="new orbit hotel booking ">   
         <classes>  
             <class name="com.qa.neworbit.tests.HotelAlldetailPageTest"/>
         </classes>        
