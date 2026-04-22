@@ -156,6 +156,7 @@ public class DashboardPage {
 		//page.click(destination);
 		page.keyboard().type(City);
 		//page.fill(destination, City);
+		page.waitForTimeout(10000);
 				System.out.println("on line 159");
 		page.locator(destmatch).first().click();
 		System.out.println("Date want to search :" + date);
