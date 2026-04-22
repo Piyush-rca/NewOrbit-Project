@@ -78,7 +78,7 @@ public class PlaywrightFactory {
 
 			//----- for headless
 
-				tlBrowser.set(getPlaywright().chromium().launch(new LaunchOptions().setChannel("chrome").setHeadless(false)));
+				tlBrowser.set(getPlaywright().chromium().launch(new LaunchOptions().setChannel("chrome").setHeadless(true)));
 			break;
 			
 			
