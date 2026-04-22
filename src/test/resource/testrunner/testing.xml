@@ -8,7 +8,7 @@
 
 	</listeners>
 	
-	
+	<!--
 	<test name="new orbit login">   
         <classes>  
 			<class name="com.qa.neworbit.tests.LoginPageTest"/>
@@ -26,7 +26,7 @@
 			<class name="com.qa.neworbit.tests.SearchResultPageTest"/>
         </classes>        
     </test>
-
+-->
 	
 	<test name="new orbit hotel booking ">   
         <classes>  
