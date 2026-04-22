@@ -71,9 +71,9 @@ public class loginPage {
 		System.out.println("step1");
 		//OTP functionality automate
 		
-		    String apiKey = "OieNDJHh3ZYkXYldhJ2OBSXf6Id2MHXo";
-		    String serverId = "7orzazff";
-		    String serverDomain = "7orzazff.mailosaur.net";
+		    String apiKey = "mKi1nAZbQgnQlp8tCbY8XgssLRbDaO7N";
+		    String serverId = "3wyz7dmq";
+		    String serverDomain = "3wyz7dmq.mailosaur.net";
 
 		    System.out.println("step2");
 		    
@@ -169,9 +169,9 @@ public class loginPage {
 				System.out.println("step1");
 				//OTP functionality automate
 				
-				    String apiKey = "OieNDJHh3ZYkXYldhJ2OBSXf6Id2MHXo";
-				    String serverId = "7orzazff";
-				    String serverDomain = "7orzazff.mailosaur.net";
+				    String apiKey = "mKi1nAZbQgnQlp8tCbY8XgssLRbDaO7N";
+				    String serverId = "3wyz7dmq";
+				    String serverDomain = "3wyz7dmq.mailosaur.net";
 	
 				    System.out.println("step2");
 				    

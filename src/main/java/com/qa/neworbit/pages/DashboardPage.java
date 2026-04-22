@@ -207,4 +207,24 @@ public class DashboardPage {
 		return new SearchResultPage(page);
 	}
 	
+	
+//	Added for transfer
+	
+//	public boolean navigateToTransferSearchResult(String TransferCity, String TransferDays) {
+//		
+//		int afterDayToSearch = Integer.parseInt(TransferDays);
+//		LocalDate dateToSearch = LocalDate.now().plusDays(afterDayToSearch);
+//		System.out.println("date to make boooking for : " + dateToSearch);
+//		
+//		targetDay = String.valueOf(dateToSearch.getDayOfMonth());
+//		targetMonth = dateToSearch.getMonth().getDisplayName(TextStyle.SHORT, Locale.ENGLISH);
+//		targetYear = String.valueOf(dateToSearch.getYear());
+//		System.out.println("targetDay " + targetDay);
+//		System.out.println("targetMonth " + targetMonth);
+//		System.out.println("targetYear " + targetYear);
+//		
+//		return false;
+//	}
+	
+	
 }

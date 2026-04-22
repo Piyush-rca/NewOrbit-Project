@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite parallel="tests" name="Failed suite [MyNewOrbitTestSuit]" guice-stage="DEVELOPMENT" verbose="4">
-  <listeners>
-    <listener class-name="com.qa.neworbit.listeners.ExtentReportListener"/>
-  </listeners>
-  <test thread-count="5" parallel="tests" name="new orbit hotel booking Test2(failed)" verbose="4">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
       <class name="com.qa.neworbit.tests.HotelAlldetailPageTest">
         <methods>
@@ -14,10 +11,10 @@
           <include name="titleverify"/>
           <include name="tearDown"/>
           <include name="lowestroomselection"/>
-          <include name="hotelbookingcancel"/>
           <include name="setup"/>
+          <include name="hotelbookingcancel"/>
         </methods>
       </class> <!-- com.qa.neworbit.tests.HotelAlldetailPageTest -->
     </classes>
-  </test> <!-- new orbit hotel booking Test2(failed) -->
-</suite> <!-- Failed suite [MyNewOrbitTestSuit] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
